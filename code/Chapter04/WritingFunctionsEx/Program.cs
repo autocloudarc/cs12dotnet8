@@ -1,0 +1,1 @@
+﻿TimesTable(number: 10, size: 20);
