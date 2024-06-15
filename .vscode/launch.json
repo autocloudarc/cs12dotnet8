@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      // "preLaunchTask": "build",
+      "program": "${workspaceFolder}/code/Chapter04/DebuggingEx/bin/Debug/net8.0/DebuggingEx.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/code/Chapter04/DebuggingEx",
+      "stopAtEntry": false,
+      "requireExactSource": false,
+      "console": "integratedTerminal"
+    }
+  ]
+}
