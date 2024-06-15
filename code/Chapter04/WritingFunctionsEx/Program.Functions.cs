@@ -30,7 +30,7 @@ partial class Program
 
         return amount * rate / 100;
     }
-    static void ConfigureConsole(string culture = "en-US", 
+    static void ConfigureConsole(string culture = "en-US",
         bool useComputerCulture = false)
     {
         // To enable Unicode characters like Euro symbol in the console.
@@ -40,78 +40,78 @@ partial class Program
             CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo(culture);
         }
         WriteLine($"Current culture is {CultureInfo.CurrentCulture.DisplayName}");
-    }
-    
-    static string CardinalToOrdinal(uint number)
-    {
-        uint lastTwoDigits = number % 100;
-        switch (lastTwoDigits)
+
+        static string CardinalToOrdinal(uint number)
         {
-            case 11:
-            case 12:
-            case 13:
-                return $"{number}th";
-            default:
-                uint lastDigit = number % 10;
-                string suffix = lastDigit switch
+            uint lastTwoDigits = number % 100;
+            switch (lastTwoDigits)
+            {
+                case 11:
+                case 12:
+                case 13:
+                    return $"{number}th";
+                default:
+                    uint lastDigit = number % 10;
+                    string suffix = lastDigit switch
+                    {
+                        1 => "st",
+                        2 => "nd",
+                        3 => "rd",
+                        _ => "th"
+                    };
+                    return $"{number}{suffix}";
+            }
+        }
+
+        static void RunCardinalToOrdinal()
+        {
+            for (uint number = 1; number <= 1500; number++)
+            {
+                WriteLine($"{CardinalToOrdinal(number)}");
+            }
+            WriteLine();
+        }
+
+        static int Factorial(int number)
+        {
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(paramName: nameof(number),
+                message: $"The number must be non-negative. Input: {number}");
+            }
+            else if (number == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                checked // for overflow
                 {
-                    1 => "st",
-                    2 => "nd",
-                    3 => "rd",
-                    _ => "th"
-                };
-                return $"{number}{suffix}";
+                    return number * Factorial(number - 1);
+                }
+            }
         }
-    }
 
-    static void RunCardinalToOrdinal()
-    {
-        for (uint number = 1; number <= 1500; number++)
+        static void RunFactorial()
         {
-            WriteLine($"{CardinalToOrdinal(number)}");
-        }
-        WriteLine();
-    }
-
-    static int Factorial(int number)
-    {
-        if (number < 0)
-        {
-            throw new ArgumentOutOfRangeException(paramName: nameof(number),
-            message: $"The number must be non-negative. Input: {number}");
-        }
-        else if (number == 0)
-        {
-            return 1;
-        }
-        else
-        {
-            checked // for overflow
+            for (int number = -2; number <= 15; number++)
             {
-                return number * Factorial(number - 1);
-            }
-        }
-    }
-
-    static void RunFactorial()
-    {
-        for (int number = -2;number <= 15; number++)
-        {
-            try
-            {
-                WriteLine($"{number}! = {Factorial(number):N0}");
-            }
-            catch (OverflowException)
-            {
-                WriteLine($"{number}! is too large for a 32-bit integer.");
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                WriteLine($"{e.Message}");
-            }
-            catch (Exception e)
-            {
-                WriteLine($"{number}! throws {e.GetType()}: {e.Message}");
+                try
+                {
+                    WriteLine($"{number}! = {Factorial(number):N0}");
+                }
+                catch (OverflowException)
+                {
+                    WriteLine($"{number}! is too large for a 32-bit integer.");
+                }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    WriteLine($"{e.Message}");
+                }
+                catch (Exception e)
+                {
+                    WriteLine($"{number}! throws {e.GetType()}: {e.Message}");
+                }
             }
         }
     }
