@@ -1,4 +1,5 @@
-﻿using System.Globalization; // To use CultureInfo
+﻿using System.ComponentModel.Design;
+using System.Globalization; // To use CultureInfo
 partial class Program
 {
     static void TimesTable(byte number, byte size = 12)
@@ -72,4 +73,46 @@ partial class Program
         WriteLine();
     }
 
+    static int Factorial(int number)
+    {
+        if (number < 0)
+        {
+            throw new ArgumentOutOfRangeException(paramName: nameof(number),
+            message: $"The number must be non-negative. Input: {number}");
+        }
+        else if (number == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            checked // for overflow
+            {
+                return number * Factorial(number - 1);
+            }
+        }
+    }
+
+    static void RunFactorial()
+    {
+        for (int number = -2;number <= 15; number++)
+        {
+            try
+            {
+                WriteLine($"{number}! = {Factorial(number):N0}");
+            }
+            catch (OverflowException)
+            {
+                WriteLine($"{number}! is too large for a 32-bit integer.");
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                WriteLine($"{e.Message}");
+            }
+            catch (Exception e)
+            {
+                WriteLine($"{number}! throws {e.GetType()}: {e.Message}");
+            }
+        }
+    }
 }
