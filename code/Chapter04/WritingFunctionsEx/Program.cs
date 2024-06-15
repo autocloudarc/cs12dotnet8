@@ -5,5 +5,7 @@
 // Alternatively, call the function in the interpolated string.
 // WriteLine($"you must pay {CalculateTax(amount: 149,
 // twoLetterRegionCode: "FR"):C} in tax.");
-RunCardinalToOrdinal();
+// RunCardinalToOrdinal();
 // RunFactorial();
+// RunFibImperative();
+RunFibFunctional();

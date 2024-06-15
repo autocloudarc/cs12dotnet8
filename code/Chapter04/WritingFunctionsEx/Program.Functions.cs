@@ -41,77 +41,134 @@ partial class Program
         }
         WriteLine($"Current culture is {CultureInfo.CurrentCulture.DisplayName}");
 
-        static string CardinalToOrdinal(uint number)
+
+    }
+    // Using lambdas in function implementations
+    static string CardinalToOrdinal(uint number)
+    {
+        uint lastTwoDigits = number % 100;
+        switch (lastTwoDigits)
         {
-            uint lastTwoDigits = number % 100;
-            switch (lastTwoDigits)
+            case 11:
+            case 12:
+            case 13:
+                return $"{number}th";
+            default:
+                uint lastDigit = number % 10;
+                string suffix = lastDigit switch
+                {
+                    1 => "st",
+                    2 => "nd",
+                    3 => "rd",
+                    _ => "th"
+                };
+                return $"{number}{suffix}";
+        }
+    }
+
+    static void RunCardinalToOrdinal()
+    {
+        for (uint number = 1; number <= 1500; number++)
+        {
+            WriteLine($"{CardinalToOrdinal(number)}");
+        }
+        WriteLine();
+    }
+
+    static int Factorial(int number)
+    {
+        if (number < 0)
+        {
+            throw new ArgumentOutOfRangeException(paramName: nameof(number),
+            message: $"The number must be non-negative. Input: {number}");
+        }
+        else if (number == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            checked // for overflow
             {
-                case 11:
-                case 12:
-                case 13:
-                    return $"{number}th";
-                default:
-                    uint lastDigit = number % 10;
-                    string suffix = lastDigit switch
-                    {
-                        1 => "st",
-                        2 => "nd",
-                        3 => "rd",
-                        _ => "th"
-                    };
-                    return $"{number}{suffix}";
+                return number * Factorial(number - 1);
             }
         }
+    }
 
-        static void RunCardinalToOrdinal()
+    static void RunFactorial()
+    {
+        for (int number = -2; number <= 15; number++)
         {
-            for (uint number = 1; number <= 1500; number++)
+            try
             {
-                WriteLine($"{CardinalToOrdinal(number)}");
+                WriteLine($"{number}! = {Factorial(number):N0}");
             }
-            WriteLine();
-        }
-
-        static int Factorial(int number)
-        {
-            if (number < 0)
+            catch (OverflowException)
             {
-                throw new ArgumentOutOfRangeException(paramName: nameof(number),
-                message: $"The number must be non-negative. Input: {number}");
+                WriteLine($"{number}! is too large for a 32-bit integer.");
             }
-            else if (number == 0)
+            catch (ArgumentOutOfRangeException e)
             {
-                return 1;
+                WriteLine($"{e.Message}");
             }
-            else
+            catch (Exception e)
             {
-                checked // for overflow
-                {
-                    return number * Factorial(number - 1);
-                }
+                WriteLine($"{number}! throws {e.GetType()}: {e.Message}");
             }
         }
-
-        static void RunFactorial()
+    }
+    static int FibImperative(uint term) // Imperative
+    {
+        if (term == 0)
         {
-            for (int number = -2; number <= 15; number++)
+            throw new ArgumentOutOfRangeException(
+                paramName: nameof(term),
+                message: "The term must be positive.");
+        }
+        else if (term == 1)
+        {
+            return 1;
+        }
+        else if (term == 2)
+        {
+            return 1;
+        }
+        else
+        {
+            return FibImperative(term - 1) + FibImperative(term - 2);
+        }
+    }
+    static void RunFibImperative()
+    {
+        for (uint i = 1; i <= 30; i++)
+        {
+            WriteLine($"The {CardinalToOrdinal(i)} term of the Fibonacci sequence is {FibImperative(i):N0}.");
+        }
+    }
+
+    static int FibFunctional(uint term) => term switch // Functional
+    {
+        0 => throw new ArgumentOutOfRangeException(),
+        1 => 0,
+        2 => 1,
+        _ => FibFunctional(term -1) + FibFunctional(term - 2)
+    };
+
+    static void RunFibFunctional()
+    {
+        for (uint i = 1; i <= 30; i++)
+        {
+            try
             {
-                try
-                {
-                    WriteLine($"{number}! = {Factorial(number):N0}");
-                }
-                catch (OverflowException)
-                {
-                    WriteLine($"{number}! is too large for a 32-bit integer.");
-                }
-                catch (ArgumentOutOfRangeException e)
-                {
-                    WriteLine($"{e.Message}");
-                }
-                catch (Exception e)
-                {
-                    WriteLine($"{number}! throws {e.GetType()}: {e.Message}");
-                }
+                WriteLine($"The {CardinalToOrdinal(i)} term of the Fibonacci sequence is {FibFunctional(i):N0}.");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                WriteLine($"The {CardinalToOrdinal(i)} term is too large for a 32-bit integer.");
+            }
+            catch (Exception e)
+            {
+                WriteLine($"{e.GetType()}: {e.Message}");
             }
         }
     }
