@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WritingFunctionsEx", "Writi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebuggingEx", "DebuggingEx\DebuggingEx.csproj", "{BDEF2C78-DD2E-4332-94B1-DC7FD3BDB96F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotReloadingEx", "HotReloadingEx\HotReloadingEx.csproj", "{E8FC6865-C740-40F0-BCE3-114AD01AF244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{BDEF2C78-DD2E-4332-94B1-DC7FD3BDB96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDEF2C78-DD2E-4332-94B1-DC7FD3BDB96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDEF2C78-DD2E-4332-94B1-DC7FD3BDB96F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8FC6865-C740-40F0-BCE3-114AD01AF244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8FC6865-C740-40F0-BCE3-114AD01AF244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8FC6865-C740-40F0-BCE3-114AD01AF244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8FC6865-C740-40F0-BCE3-114AD01AF244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
