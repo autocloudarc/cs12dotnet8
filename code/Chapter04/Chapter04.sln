@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotReloadingEx", "HotReload
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstrumentingEx", "InstrumentingEx\InstrumentingEx.csproj", "{AD795A01-9C0C-42D5-9135-0637285EC025}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLibEx", "CalculatorLibEx\CalculatorLibEx.csproj", "{A78BB995-4BA1-47A6-BF74-1F60734C6900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLibExUnitTests", "CalculatorLibExUnitTests\CalculatorLibExUnitTests.csproj", "{57395263-2CD6-4C67-BA7B-3DD0FA11DD72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{AD795A01-9C0C-42D5-9135-0637285EC025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD795A01-9C0C-42D5-9135-0637285EC025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD795A01-9C0C-42D5-9135-0637285EC025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A78BB995-4BA1-47A6-BF74-1F60734C6900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78BB995-4BA1-47A6-BF74-1F60734C6900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78BB995-4BA1-47A6-BF74-1F60734C6900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78BB995-4BA1-47A6-BF74-1F60734C6900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57395263-2CD6-4C67-BA7B-3DD0FA11DD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57395263-2CD6-4C67-BA7B-3DD0FA11DD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57395263-2CD6-4C67-BA7B-3DD0FA11DD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57395263-2CD6-4C67-BA7B-3DD0FA11DD72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
