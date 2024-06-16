@@ -45,7 +45,10 @@ Console.WriteLine($"TraceSwitch description: {ts.Level}");
 Trace.WriteLineIf(ts.TraceError, "Trace error message.");
 Trace.WriteLineIf(ts.TraceWarning, "Trace warning message.");
 Trace.WriteLineIf(ts.TraceInfo, "Trace info message.");
-Trace.WriteLineIf(ts.TraceVerbose, "Trace verbose message.");   
+Trace.WriteLineIf(ts.TraceVerbose, "Trace verbose message.");
+
+int unitsInStock = 12;
+LogSourceDetails(unitsInStock > 10);
 
 // Close the text file (also flushes) and release resources.
 Debug.Close();
