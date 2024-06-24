@@ -130,3 +130,13 @@ catch (Exception Ex)
 {
     WriteLine($"{Ex.GetType()} says: {Ex.Message} number was {number}.");
 }
+
+Person sam = new()
+{
+    Name = "Sam",
+    Born = new(1969, 6, 25, 0, 0, 0, TimeSpan.Zero  )
+};
+
+WriteLine(sam.Origin);
+WriteLine(sam.Greeting);
+WriteLine(sam.Age);
