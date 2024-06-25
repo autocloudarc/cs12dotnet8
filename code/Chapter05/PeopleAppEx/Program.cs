@@ -140,3 +140,20 @@ Person sam = new()
 WriteLine(sam.Origin);
 WriteLine(sam.Greeting);
 WriteLine(sam.Age);
+
+sam.FavoriteIceCream = "Chocolate Fudge";
+WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}.");
+
+string color = "Red";
+
+try
+{
+    sam.FavoritePrimaryColor = color;
+    WriteLine($"{sam.Name}'s favorite color is {sam.FavoritePrimaryColor}.");
+    sam.FavoritePrimaryColor = "Yellow";
+    WriteLine($"{sam.Name}'s favorite color is {sam.FavoritePrimaryColor}.");
+}
+catch (Exception Ex)
+{
+    WriteLine(Ex.Message);
+}
