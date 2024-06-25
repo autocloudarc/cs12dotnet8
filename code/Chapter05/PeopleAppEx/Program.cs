@@ -37,6 +37,8 @@ bob.Children.Add(new Person { Name = "Alfred" });
 bob.Children.Add(new Person { Name = "Bella" });
 bob.Children.Add(new Person { Name = "Zoe" });
 
+bob.FavoriteAncientWonder = (WondersOfTheAncientWorldEx.StatueOfZeusAtOlympia);
+
 WriteLine($"{bob.Name} has {bob.Children.Count} children:");
 foreach (Person child in bob.Children)
 {
@@ -157,3 +159,5 @@ catch (Exception Ex)
 {
     WriteLine(Ex.Message);
 }
+
+WriteLine($"{bob.Name} favorite wonder: {bob}");

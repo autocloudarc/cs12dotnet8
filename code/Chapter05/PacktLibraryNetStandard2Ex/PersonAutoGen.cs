@@ -5,14 +5,14 @@
 public partial class Person
 {
     #region Properties: Methods to get an/or stet data or state.
-    
+
     // A readonly property defined using C# 1 to 5 syntax
     public string Origin
     {
         get
         {
             return string.Format("{0} was born on {1}.",
-            arg0: Name, 
+            arg0: Name,
             arg1: HomePlanet);
         }
     }
@@ -56,4 +56,26 @@ public partial class Person
         }
     }
 
+    // This has been moved to PersonAutoGen.cs as a property.
+    // public WondersOfTheAncientWorld FavoriteAncientWonder;
+
+    private WondersOfTheAncientWorldEx _favoriteAncientWonder;
+
+    public WondersOfTheAncientWorldEx FavoriteAncientWonder
+    {
+        get { return _favoriteAncientWonder; }
+        set 
+        { 
+            string wonderName = value.ToString();
+            if (wonderName.Contains(','))
+            {
+                throw new ArgumentException($"{value} is not a single wonder. nameof(FavoriteAncientWonder)");
+            }
+            if (!Enum.IsDefined(typeof(WondersOfTheAncientWorldEx), value))
+            {
+                throw new ArgumentException($"{value} is not a valid wonder. nameof(FavoriteAncientWonder)");
+            }
+        }
+    }
 }
+   
