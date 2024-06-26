@@ -77,5 +77,28 @@ public partial class Person
             }
         }
     }
+
+    #region Indexers: Access class elements using an index.
+    
+    public Person this[int index]
+    {
+        get
+        {
+            return Children[index]; // Pass on to the List<T> indexer.
+        }
+        set
+        {
+            Children[index] = value;
+        }
+    }
+    #endregion
+
+    // A read-only string indexer.
+    public Person this[string name]
+    {
+        get
+        {
+            return Children.Find(p => p.Name == name);
+        }
+    }
 }
-   

@@ -161,3 +161,20 @@ catch (Exception Ex)
 }
 
 WriteLine($"{bob.Name} favorite wonder: {bob}");
+
+sam.Children.Add(new Person { Name = "Charlie",
+    Born = new(2010, 3, 18, 0, 0, 0, TimeSpan.Zero)});
+sam.Children.Add(new Person { Name = "Ella",
+    Born = new(2020, 12, 24, 0, 0, 0, TimeSpan.Zero)
+});
+
+// Get using Children list.
+WriteLine($"Sam's first child is {sam.Children[0].Name}");
+WriteLine($"Sam's second child is {sam.Children[1].Name}");
+
+// Get using the int indexer.
+WriteLine($"Sam's first child is {sam[0].Name}");
+WriteLine($"Sam's second child is {sam[1].Name}");
+
+// Get using the string indexer.
+WriteLine($"Sam's first child is {sam["Ella"].Age} years old.");
