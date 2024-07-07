@@ -1,5 +1,7 @@
 ﻿using Packt.Shared; // To use Person.
+using System.Security.Cryptography;
 using Fruit = (string Name, int Number); // Aliasing a tuple type
+using PackLibraryModern; // for Records and Equality classes
 
 ConfigureConsole(); // Sets current culture to US English.
 
@@ -178,3 +180,39 @@ WriteLine($"Sam's second child is {sam[1].Name}");
 
 // Get using the string indexer.
 WriteLine($"Sam's first child is {sam["Ella"].Age} years old.");
+
+// An array containing a mix of passenger types.
+Passenger[] passengers = new Passenger[]
+{
+    new FirstClassPassenger { AirMiles = 1_419, Name = "Suman" },
+    new FirstClassPassenger { AirMiles = 16_562, Name = "Lucy" },
+    new BusinessClassPassenger { Name = "Janice" },
+    new CoachClassPassenger { CarryOnKG = 25.7, Name = "Dave" },
+    new CoachClassPassenger { CarryOnKG = 0, Name = "Amit" }
+};
+
+foreach (Passenger passenger in passengers)
+{
+    decimal flightCost = passenger switch
+    {
+        FirstClassPassenger { AirMiles: > 35000 } => 1500M,
+        FirstClassPassenger { AirMiles: > 15000 } => 1750M,
+        FirstClassPassenger => 2000M,
+        BusinessClassPassenger => 1000M,
+        CoachClassPassenger { CarryOnKG: > 20 } => 500M,
+        CoachClassPassenger => 650M,
+        _ => 2000M
+    };
+
+};
+
+ImmutableVehicle car = new()
+{ 
+    Brand = "Mazda MX-5 RF", 
+    Color = "Soul Red Crystal Metallic", 
+    Wheels = 4 
+};
+ImmutableVehicle repaintedCar = car 
+        with { Color = "Polymetal Gray Metallic" };
+WriteLine($"Original car color was {car.Color}.");
+WriteLine($"New car color is {repaintedCar.Color}.");
