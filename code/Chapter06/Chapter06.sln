@@ -7,13 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacktLibrary", "PacktLibrar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{FF31333E-204A-4F87-8863-217C4D6022E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullHandling", "NullHandling\NullHandling.csproj", "{0EE014CF-49A6-469C-A1E6-EBC612C17AF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullHandling", "NullHandling\NullHandling.csproj", "{0EE014CF-49A6-469C-A1E6-EBC612C17AF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarningsAsErrors", "WarningsAsErrors\WarningsAsErrors.csproj", "{D22A0F56-A95F-450B-B083-A2CD39916916}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch06Ex02Inheritance", "Ch06Ex02Inheritance\Ch06Ex02Inheritance.csproj", "{52445259-94FB-476D-806F-CADE9308F546}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzing", "CodeAnalyzing\CodeAnalyzing.csproj", "{E5E01ABA-20CF-4834-9F6E-05623525C2A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibraryEx", "PacktLibraryEx\PacktLibraryEx.csproj", "{2FA6003A-9BD0-47A9-9260-D00EAF5A7565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleAppEx", "PeopleAppEx\PeopleAppEx.csproj", "{FE2EDBC1-8C73-43A1-80E3-F440643247DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{E5E01ABA-20CF-4834-9F6E-05623525C2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5E01ABA-20CF-4834-9F6E-05623525C2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E01ABA-20CF-4834-9F6E-05623525C2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA6003A-9BD0-47A9-9260-D00EAF5A7565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA6003A-9BD0-47A9-9260-D00EAF5A7565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA6003A-9BD0-47A9-9260-D00EAF5A7565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA6003A-9BD0-47A9-9260-D00EAF5A7565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2EDBC1-8C73-43A1-80E3-F440643247DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2EDBC1-8C73-43A1-80E3-F440643247DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2EDBC1-8C73-43A1-80E3-F440643247DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2EDBC1-8C73-43A1-80E3-F440643247DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
